@@ -108,3 +108,19 @@ a{
   .greyBg{
     background: #212529!important;
   }
+  .noPadding{
+    padding: 0px!important;
+  }
+.darkGreyBg{
+  background: #18191a;
+}
+.underline{
+  text-decoration: underline;
+}
+.inheritBg{
+  background: inherit!important;
+}
+.awidth{
+  width: auto;
+  max-width: 100%;
+}
