@@ -85,11 +85,9 @@ a{
 }
 /*END NEON EFFECT*/
 .fill{
-    margin-right: 0%!important;
-    margin-left: 0%!important;
-    min-height: 100vh;
-    height: 100%;
-    width: auto;
+  min-height:100vh;
+  height: 100%;
+
   }
   .vmiddle{
     padding-top: 15%;
