@@ -7,34 +7,79 @@
     <title>Luis Pozo</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Squada+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css"  crossorigin="anonymous">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">  
+    <script src="./js/index.js"></script>  
 </head>
-<body  data-spy="scroll" data-target="#navbar">
-    <div class="row fill bg gradientBg mwidth">
+<body>
+    <div id="home" class="row fill bg gradientBg mwidth">
             <div class=" text-light squada-one text-center col-12 my-auto">
                 <h1 class="display-4">Luis Pozo</h1>
                 <h1>Full Stack Developer</h1>
              </div>
     </div>
+    <div id="about" class="fill mwidth bg1 container-fluid">
+      <h1 class="squada-one text-white pt-5">$ WHOAMI</h1>
+      <div class="row">
+          <div class="pt-5 col-sm-12 col-lg-6  text-white open-sans text-left">
+            <p class="text-justify aboutText">
+                Hello my name is Luis Pozo, I'm a junior Full Stack Developer, Software Engineering Student and Linux Lover.
+                I'm also a Hackathoner, these meetings are a great way to improve your skills, both in develepoment and teamwork.
+                Another of my passions is the security. It's a mad world, in a constant developing and growing, there lies its beauty. You need a lot of knowledge to be always ready to whatever may come. Thanks to plattforms like HackTheBox I'm learning by my own how to introduce myself in these field.                
+            </p>
+          </div>
+      </div>
+    </div>
+    <div id="contact" class=" mwidth bg2 container-fluid pb-5">
+      <h1 class="squada-one d-flex flex-row text-white pt-5">$ CONTACT</h1>
+      <div class="my-auto">
+        <h2 class="text-center open-sans text-white">You can find me in:</h2>
+        <div class="d-flex  justify-content-center text-center mt-5 pb-5 open-sans text-white h100">
+          <div class="p-3">
+                <h1> <i class="icon ion-ios-mail"></i></h1>
+                <h4 class="">
+                  E-MAIL
+                </h4>
+          </div>
+          <div class="p-3">
+              <h1> <i class="icon ion-logo-github"></i></h1>
+              <h4 class="">
+                GITHUB
+              </h4>
+          </div>        
+          <div class="p-3">
+              <h1> <i class="icon ion-logo-twitter"></i></h1>
+              <h4 class="">
+                TWITTER
+              </h4>
+          </div>
+          <div class="p-3">
+            <h1> <i class="icon ion-md-paper"></i></h1>
+            <h4 class="">
+              MEDIUM
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
     <ul class="nav justify-content-center fixed-bottom text-light squada-one">
             <li class="nav-item">
-              <a class="nav-link active" href="#"><h5>Home</h5></a>
+              <a class="nav-link active" href="#home"><h5>Home</h5></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><h5>About me</h5></a>
+              <a class="nav-link" href="#about"><h5>About me</h5></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><h5>Portfolio</h5></a>
-            </li>
+                <a class="nav-link" href="#contact"><h5>Contact</h5></a>
+              </li>            
             <li class="nav-item">
-              <a class="nav-link" href="#"><h5>Contact</h5></a>
+              <a class="nav-link" href="https://github.com/w0xter"><h5>Portfolio</h5></a>
             </li>
     </ul>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-               
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="./js/bootstrap.min.js" crossorigin="anonymous"></script>
+             
 </body>
 </html>
