@@ -156,6 +156,11 @@ background-image: linear-gradient(to bottom, #96c93d, #00b09b); /* W3C, IE 10+/ 
     position: relative;
     top: auto!important;
   }
+  .fill-mobile{
+    min-height: 100vh!important;
+    height: 100%!important;
+
+  }
 }
 .aboutText{
   font-size: 1.5rem;
@@ -175,4 +180,7 @@ list-style: none!important;
 .middle{
   position: relative;
   top: 50%;
+}
+.fill-mobile{
+  height: auto;
 }
