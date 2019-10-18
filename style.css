@@ -147,10 +147,30 @@ background-image: -webkit-linear-gradient(to bottom, #96c93d, #00b09b);  /* Chro
 background-image: linear-gradient(to bottom, #96c93d, #00b09b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-@media only screen and (max-width: 768px){
+/* @media only screen and (max-width: 500px){
   .aboutText{
-    font-size: 1.2rem!important;
+    font-size: 1rem!important;
+    line-height: 1.2!important;
+    max-height:100%!important;
+    color: red!important;
+
+  }
+  .middle{
+    position: relative;
+    top: auto!important;
+  }
+  .fill-mobile{
+    min-height: 100vh!important;
+    height: 100%!important;
+
+  }
+} */
+@media only screen and  (max-width: 768px){
+  .aboutText{
+    font-size: 1.1rem!important;
     line-height: 1.5!important;
+    max-height:100%!important;
+
   }
   .middle{
     position: relative;
@@ -165,6 +185,7 @@ background-image: linear-gradient(to bottom, #96c93d, #00b09b); /* W3C, IE 10+/ 
 .aboutText{
   font-size: 1.5rem;
   line-height: 1.7;
+  max-height:100%!important;
 }
 
 .fixed-right{
