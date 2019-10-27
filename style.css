@@ -208,3 +208,29 @@ list-style: none!important;
 .whiteText{
   color: #ffffff;
 }
+.homeNav{
+  color: white!important;
+  transition: 0.7s!important;
+}
+.homeNav:active, .homeNav.hovered{
+  background:rgba(0,0,0,0.5)!important;
+  animation:fading 0.7s !important;
+}
+.aboutNav{
+  color: white!important;
+  transition: 0.7s!important;
+}
+.aboutNav:active, .aboutNav.hovered{
+  background:rgba(0,0,0,0.5)!important;
+  animation:fading 0.7s !important;
+}
+.contactNav{
+  color: white!important;
+  transition: 0.7s!important;
+}
+.contactNav:active, .contactNav.hovered{
+  background:rgba(0,0,0,0.5)!important;
+  animation:fading 0.7s !important;
+}
+.w3-animate-fading{animation:fading 10s infinite}
+@keyframes fading{0%{opacity:0}100%{opacity:1}}
