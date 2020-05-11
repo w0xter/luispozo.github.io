@@ -1,10 +1,12 @@
 import {Client} from "graphql-ld";
-import {QueryEngineComunicaSolid} from "graphql-ld-comunica-solid";
+import {QueryEngineComunica} from "graphql-ld-comunica";
  
 // Define a JSON-LD context
 const uris = {
     foaf:"http://xmlns.com/foaf/0.1/",
-    schem:"http://schema.org/"
+    schem:"http://schema.org/",
+    ldp:"http://www.w3.org/ns/ldp#",
+    sioc:"http://rdfs.org/sioc/ns#"
 }
 const context = {
     "@context": {
@@ -23,24 +25,24 @@ const context = {
       "rdftype":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "currentProject":`${uris.foaf}currentProject`,
       "interests": "foaf:topic_interest",
-      "LUIS": { "@id": "https://luispozo.inrupt.net/profile/card#me" }
+      "LUIS": { "@id": "https://luispozo.inrupt.net/profile/card#me" },
+      "POSTS":{"@id":"https://luispozo.inrupt.net/public/posts/#"}
     }
   };
  
-// Create a GraphQL-LD client based on a client-side Comunica engine over 3 sources
 const comunicaConfig = {
   sources: [
-    "https://luispozo.inrupt.net/profile/card#me"
+    {type:"file", value:"https://luispozo.inrupt.net/profile/card#me"}
   ],
 };
-const client = new Client({ context, queryEngine: new QueryEngineComunicaSolid(comunicaConfig) });
+const client = new Client({ context, queryEngine: new QueryEngineComunica(comunicaConfig) });
  
 // Define a query
-const query = (id) => (`
+const getPerson = (id) => (`
   query @single {
     id(_:${id})  @single
     name @single
-    img @single
+    image @single
     description @single
     email @single
     currentProject {
@@ -54,12 +56,25 @@ const query = (id) => (`
     }
     
   }`);
+  const getArticles = () => (`
+    query @single {
+      id
+      a
+    }
+  `)
  
 // Execute the query
 export function getInfo(person){
     return new Promise(async (resolve, reject) => {
-        const queryPerson = query(person) 
+        const queryPerson = getPerson(person) 
         const response = await client.query({query:queryPerson}).catch(err => reject(err));
         resolve({data:response.data, context:context["@context"]})
     });
+}
+export function getPosts(){
+  return new Promise(async (resolve, reject) => {
+      const articles = getArticles() 
+      const response = await client.query({query:articles}).catch(err => reject(err));
+      resolve({data:response.data, context:context["@context"]})
+  });
 }

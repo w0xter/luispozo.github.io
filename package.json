@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.1.2",
     "graphql-ld": "^1.1.0",
+    "graphql-ld-comunica": "^1.0.1",
     "graphql-ld-comunica-solid": "^1.0.1",
     "loaders.css": "^0.1.2",
     "node-sass": "^4.14.1",

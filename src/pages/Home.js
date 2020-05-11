@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import {getInfo} from '../api/solid'
+import {getInfo, getPosts} from '../api/solid'
 import {Row, Col,Typography, Space, Divider, Spin} from 'antd'
 import { TwitterOutlined, GithubOutlined, LinkedinOutlined, MailOutlined, LoadingOutlined} from '@ant-design/icons'
 import RecentProjects from '../components/Recent'
@@ -23,6 +23,7 @@ export default class Home extends React.Component{
     componentDidUpdate(){
         if(Object.keys(this.state.data).length === 0)
             getInfo("LUIS").then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
+
     }
     render(){
         console.log(this.state.data)
@@ -33,7 +34,7 @@ export default class Home extends React.Component{
             <Row align="middle" justify="center">
             <Col xs={24} md={8} align="center">
                 <Space size="small" direction="vertical">
-                    <img className="imgHome" property={this.state.context.img} src={this.state.data.img} alt=""/>
+                    <img className="imgHome" property={this.state.context.image} src={this.state.data.image} alt=""/>
                     <Row gutter={[16, 16] } justify="center">
                         <Col>
                         <a href="http://github.com/w0xter">
