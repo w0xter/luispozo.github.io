@@ -25,7 +25,8 @@ export default function Recent(props){
             return(
                 <List.Item>
                 <Card 
-                    property={project.rdftype}
+                    typeof={project.rdftype}
+                    resource={project.id}
                     className="shadowEffect"
                     style={{heigth:'100%',minHeigth:'100%'}}
                     cover={

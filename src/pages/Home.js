@@ -17,20 +17,20 @@ export default class Home extends React.Component{
     }
 
     componentDidMount(){
-        getInfo().then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
+        getInfo("LUIS").then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
 
     }
     componentDidUpdate(){
         if(Object.keys(this.state.data).length === 0)
-            getInfo().then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
+            getInfo("LUIS").then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
     }
     render(){
         console.log(this.state.data)
     return(
         <Layout>
             {Object.keys(this.state.data).length !== 0?(
-            <>
-            <Row align="middle" justify="center" property={this.state.context.Person}>
+            <span  resource={this.state.context.LUIS["@id"]} typeof={this.state.context.Person}>
+            <Row align="middle" justify="center">
             <Col xs={24} md={8} align="center">
                 <Space size="small" direction="vertical">
                     <img className="imgHome" property={this.state.context.img} src={this.state.data.img} alt=""/>
@@ -79,7 +79,7 @@ export default class Home extends React.Component{
         </Row>
         <RecentProjects data={this.state.data.currentProject} context={this.state.context}></RecentProjects>
         <Divider></Divider>  
-        </>
+        </span>
             ):(
                 <div className="fullScreen">
                 <Row justify="center">

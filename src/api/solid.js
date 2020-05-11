@@ -36,14 +36,15 @@ const comunicaConfig = {
 const client = new Client({ context, queryEngine: new QueryEngineComunicaSolid(comunicaConfig) });
  
 // Define a query
-const query = `
+const query = (id) => (`
   query @single {
-    id(_:LUIS)
+    id(_:${id})  @single
     name @single
     img @single
     description @single
     email @single
     currentProject {
+        id @single
         name @single
         about @single
         url @single @optional
@@ -52,12 +53,13 @@ const query = `
         rdftype @single
     }
     
-  }`;
+  }`);
  
 // Execute the query
-export function getInfo(){
+export function getInfo(person){
     return new Promise(async (resolve, reject) => {
-        const response = await client.query({ query }).catch(err => reject(err));
+        const queryPerson = query(person) 
+        const response = await client.query({query:queryPerson}).catch(err => reject(err));
         resolve({data:response.data, context:context["@context"]})
     });
 }
