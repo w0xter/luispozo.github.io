@@ -8,7 +8,7 @@ const uris = {
     ldp:"http://www.w3.org/ns/ldp#",
     sioc:"http://rdfs.org/sioc/ns#"
 }
-const context = {
+export const context = {
     "@context": {
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "label": "rdfs:label",

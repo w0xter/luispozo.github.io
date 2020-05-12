@@ -1,40 +1,31 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import {getInfo, getPosts} from '../api/solid'
 import {Row, Col,Typography, Space, Divider, Spin} from 'antd'
 import { TwitterOutlined, GithubOutlined, LinkedinOutlined, MailOutlined, LoadingOutlined} from '@ant-design/icons'
 import RecentProjects from '../components/Recent'
+import { useLDflexValue, useLDflexList} from '@solid/react';
+import {context as jsonLdContext } from '../api/solid'
+const context = jsonLdContext["@context"]
 const {Paragraph} = Typography
 const {Title} = Typography
 
-export default class Home extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            data:{},
-            context:{}
-        }
-    }
 
-    componentDidMount(){
-        getInfo("LUIS").then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
 
-    }
-    componentDidUpdate(){
-        if(Object.keys(this.state.data).length === 0)
-            getInfo("LUIS").then((response) => this.setState({data:response.data, context:response.context})).catch((err) => console.log(err))
-
-    }
-    render(){
-        console.log(this.state.data)
+export default function Home(props){
+    const webId = "https://luispozo.inrupt.net/profile/card#me"
+    const uri = `[${webId}]`
+    const name = useLDflexValue(uri +'.schema_name') || 'unknown';
+    const description = useLDflexValue(uri +'.schema_description') || 'unknown'
+    const image =  useLDflexValue(uri +'.schema_image') || 'unknown'
+    const email =  useLDflexValue(uri +'.schema_email') || 'unknown'
+    const currentProject =  useLDflexList(uri +'[foaf:currentProject]') || 'unknown'
     return(
         <Layout>
-            {Object.keys(this.state.data).length !== 0?(
-            <span  resource={this.state.context.LUIS["@id"]} typeof={this.state.context.Person}>
+            <span  resource={webId} typeof='http://schema.org/Person'>
             <Row align="middle" justify="center">
             <Col xs={24} md={8} align="center">
                 <Space size="small" direction="vertical">
-                    <img className="imgHome" property={this.state.context.image} src={this.state.data.image} alt=""/>
+                    <img className="imgHome" property={context.image} src={image.value} alt=""/>
                     <Row gutter={[16, 16] } justify="center">
                         <Col>
                         <a href="http://github.com/w0xter">
@@ -52,7 +43,7 @@ export default class Home extends React.Component{
                         </a>
                         </Col>
                         <Col>
-                        <a href={"mailto:" + this.state.data.email} property={this.state.context.email}>
+                        <a href={"mailto:" + email} property={context.email}>
                             <MailOutlined  style={{ fontSize: '1.5em'}} />
                         </a>
                         </Col>
@@ -62,12 +53,12 @@ export default class Home extends React.Component{
             </Col>
             <Col xs={24} md={12}>
                 <Title level={2}>
-                    <span property={this.state.context.name}>
-                        {this.state.data.name}
+                    <span property={context.name}>
+                        {name.value}
                     </span></Title>
-                <span property={this.state.context.description}>
+                <span property={context.description}>
                 <Paragraph style={{textAlign:'justify'}}>
-                    {this.state.data.description}
+                    {description.value}
                 </Paragraph>
                 </span>
             </Col>
@@ -78,21 +69,10 @@ export default class Home extends React.Component{
             <Title level={2}>Recent Projects:</Title>
             </Col>
         </Row>
-        <RecentProjects data={this.state.data.currentProject} context={this.state.context}></RecentProjects>
+        <RecentProjects data={currentProject} context={context}></RecentProjects>
         <Divider></Divider>  
         </span>
-            ):(
-                <div className="fullScreen">
-                <Row justify="center">
-                    <Col>
-                        <Spin indicator={<LoadingOutlined style={{fontSize:'6em'}}/>}/>                    
-                    </Col>
-                </Row>
-                </div>
-            )}
-       
         </Layout>
  
     )
-}
 }
