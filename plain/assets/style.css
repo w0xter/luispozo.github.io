@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'raiderfont';
+    src: url('./fonts/Raiderfont-FontZillion/Fonts/raiderfont.ttf');
+}
+body{
+    font-family: 'Open Sans', sans-serif!important;
+}
+.bgPattern{
+    background-color: #212738;
+    background-attachment: fixed;
+    background-size: 115% auto;
+}
+.pinkText{
+    color:#ffa7c4;
+}
+.cyanText{
+    color: #a1cdf4;
+}
+.blueText{
+    color:#212738;
+}
+.corben{
+    font-family: 'Corben', cursive;
+}
+.divider{
+
+    border-top: 1px solid #ffffff;
+}
+.whitePinkText{
+    color:#ffffff;
+}
+.smallImg{
+    max-height: 250px!important;
+    width: auto;
+}
+.cyanBg{
+    background-color: #daecfb!important;
+}
+.pinkWhiteBg{
+    background-color: #ffd6e2!important;
+}
+.darkPinkText{
+    color: #ff8bae;
+}
+.openSans{
+    font-family: 'Open Sans', sans-serif;
+}
+a .pinkText:hover{
+    color: #ffc2d6;
+}
