@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import {Row, Col,Typography, Space, Divider, Spin} from 'antd'
-import { TwitterOutlined, GithubOutlined, LinkedinOutlined, MailOutlined, LoadingOutlined} from '@ant-design/icons'
+import {Row, Col,Typography, Space, Divider} from 'antd'
+import { TwitterOutlined, GithubOutlined, LinkedinOutlined, MailOutlined} from '@ant-design/icons'
 import RecentProjects from '../components/Recent'
 import { useLDflexValue, useLDflexList} from '@solid/react';
 import {context as jsonLdContext } from '../api/solid'
@@ -70,9 +70,9 @@ export default function Home(props){
             </Col>
         </Row>
         <RecentProjects data={currentProject} context={context}></RecentProjects>
-        <Divider></Divider>  
+        <Divider></Divider>
         </span>
         </Layout>
- 
+
     )
 }
