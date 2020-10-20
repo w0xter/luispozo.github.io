@@ -1,0 +1,111 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pro: <./>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix schem: <http://schema.org/>.
+@prefix w0x: <https://github.com/w0xter/>.
+@prefix se: <https://search.drugs4covid.oeg-upm.net/>.
+@prefix helpd: <https://github.com/helpdao/>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix n1: <http://www.w3.org/ns/auth/acl#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix lui: </>.
+@prefix XML: <http://www.w3.org/2001/XMLSchema#>.
+@prefix oeg: <https://github.com/oeg-upm/>.
+
+pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+:d4csearchengine
+    a schem:SoftwareSourceCode;
+    schem:about
+        "An open web service to exploit the existing scientific literature about coronavirus (more than 60,000 papers) identifying drugs, diseases and articles.";
+    schem:codeRepository w0x:Drugs4CovidSearchEngine;
+    schem:image <d4cImage.png>;
+    schem:name "Drugs4Covid Search Engine";
+    schem:url se:.
+:helpdao
+    a schem:SoftwareSourceCode;
+    schem:about
+        "Grassroots help for vulnerable groups in COVID-19. Discover local squads that help those who need it the most in the current COVID-19 pandemic.";
+    schem:codeRepository helpd:donation-portal;
+    schem:image <helpdaoImage.png>;
+    schem:name "Help DAO";
+    schem:url <https://app.helpdao.org>.
+:id1589124522449 a n:Dom; n:value <mailto:info@luispozo.es>.
+
+:me
+    a schem:Person, n0:Person;
+    schem:affiliation "https://oeg-upm.net/";
+    schem:description
+        "Hi!, I'm Luis. I'm a Full-stack developer. Currently I'm working as research assistant at the Ontology Engineering Group. My work is mainly focused on the development of new tools to improve the generation of Knowledge Graphs.";
+    schem:email "info@luispozo.es";
+    schem:familyName "Pozo Gilo";
+    schem:givenName "Luis";
+    schem:image "https://luispozo.inrupt.net/profile/aaa.png";
+    schem:jobTitle "Full Stack Developer";
+    schem:memberOf "https://oeg-upm.net/";
+    schem:name "Luis Pozo";
+    schem:nationality "spanish";
+    schem:url "https://luispozo.es/";
+    schem:worksFor "https://oeg-upm.net/";
+    n:fn "Luis Pozo";
+    n:hasEmail :id1589124522449;
+    n:hasPhoto <aaa.png>;
+    n:organization-name "Full stack developer";
+    n:role "Developer";
+    n1:trustedApp
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <http://localhost:3000>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://otto-aa.github.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <http://localhost:1234>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://edit.o.team>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://solid.community>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://solid.github.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://useconcept.art>
+            ],
+        [ n1:mode n1:Append, n1:Read; n1:origin <https://pheyvaer.github.io> ];
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage lui:;
+    solid:account lui:;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    solid:profileHighlightColor "#ff6e6e"^^XML:color;
+    solid:publicTypeIndex </settings/publicTypeIndex.ttl>;
+    n0:currentProject :d4csearchengine, :helpdao, :morphcsv;
+    n0:img <aaa.png>;
+    n0:name "Luis Pozo Gilo".
+:morphcsv
+    a schem:SoftwareSourceCode;
+    schem:about
+        "Morph-CSV is an open source tool for querying tabular data sources using SPARQL. It exploits the information from the query, RML+FnO mappings and CSVW metadata to enhance the performance and completness of traditional OBDA systems.";
+    schem:codeRepository oeg:morph-csv;
+    schem:image
+        <https://raw.githubusercontent.com/oeg-upm/morph-csv/master/figures/architecture.png>;
+    schem:name "Morph CSV".
+:mapeathor
+    a schem:SoftwareSourceCode;
+    schem:about "Mapeathor translates your mapping rules specified in spreadsheets to a mapping language. Mapeathor is a simple spreadsheet parser able to generate mapping rules in three mapping languages: R2RML, RML (with extension to functions from FnO) and YARRRML. It takes the mapping rules expressed in a spreadsheet and transforms them into the desired language.";
+    schem:codeRepository oeg:mapeathor;
+    schem:name "Mapeathor";
+    schem:image <https://raw.githubusercontent.com/oeg-upm/Mapeathor/master/imgs/general_schema.png>.
