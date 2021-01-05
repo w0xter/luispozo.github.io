@@ -31,13 +31,6 @@ export function Project(props){
             resource={props.uri}
             className="shadowEffect"
             style={{heigth:'100%',minHeigth:'100%'}}
-            cover={
-            <img
-                alt=""
-                property={props.context.image}
-                src={image.value}
-            />
-            }
             actions={actions}
         >
             <Meta
