@@ -8,7 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import {Row, Col, Divider} from 'antd'
 import Header from "./header"
 import 'antd/dist/antd.min.css'
 import "./layout.css"
@@ -26,23 +26,26 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
+        <Row justify="center">
+          <Col
+          style={{
+            marginTop:'2rem'
+          }}
+          xs={22}
+          md={16}
+          lg={14}
+          >
+          <main>{children}</main>
+          <footer style={{
+            marginTop: `2rem`,
+            marginBottom:`2rem`
+          }}>
+            <Divider></Divider>
+            © Luis Pozo-Gilo, {new Date().getFullYear()}
+          </footer>
+          </Col>
+        </Row>
     </>
   )
 }
