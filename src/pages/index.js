@@ -61,7 +61,7 @@ const IndexPage = () => (
 
     </div>
     <div id="articles">
-      <Title level={2}>Scientific Publications</Title>
+      <Title level={2}>Latest Academic Publications</Title>
       <Row gutter={[32,32]}>
         <Col span={24}>
           <div className="customCard">
