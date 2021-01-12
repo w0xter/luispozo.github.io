@@ -1,9 +1,0 @@
-## How does it works?
-This is my personal site, it is also a proof of concept to demonstrate that it is possible to generate personal websites that get the data from a [Solid POD](https://solid.mit.edu/).  
-### How to create your own website:  
-1.  Create your own [Solid POD](https://solid.mit.edu/).   
-2.  Fill your profile card with the information you want to show. Here is my [profile card](https://luispozo.inrupt.net/profile/card#me).  
-3.  Fetch your POD's data. You can use [LDflex](https://solid.github.io/query-ldflex/) to make things easier. Here is an [example](https://github.com/w0xter/website/tree/master/src/pages/Home.js#L15-L21).  
-4.  Add [json-ld](https://json-ld.org/) or [RDFa](https://www.w3.org/TR/rdfa-primer/) to make your website more accessible.  
-
-
