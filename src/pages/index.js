@@ -42,14 +42,14 @@ const IndexPage = () => (
       <Row gutter={16}>
         <Col>
         <Space direction="vertical">
-          <Text className=""><AiOutlineMail/> hello@luispozo.es</Text>
-          <Text className=""><FiTwitter/> @luispozodev</Text>
+          <a href="mailto:hello@luispozo.es"><AiOutlineMail/> hello@luispozo.es</a>
+          <a href="http://twitter.com/luispozodev"><FiTwitter/> @luispozodev</a>
           </Space>
         </Col>
         <Col>
         <Space direction="vertical">
-          <Text className=""><VscGithubAlt /> @w0xter</Text>
-          <Text className=""><AiOutlineLinkedin/> luis-pozo-1234</Text>
+          <a href="http://github.com/w0xter"><VscGithubAlt /> @w0xter</a>
+          <a href="http://www.linkedin.com/in/luis-pozo-472b6317a"><AiOutlineLinkedin/> luis-pozo-1234</a>
           </Space>
         </Col>
       </Row>
